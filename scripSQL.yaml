@@ -1,0 +1,26 @@
+-- Script: tecsup_delivery
+  
+  CREATE DATABASE IF NOT EXISTS tecsup_delivery;
+  USE tecsup_delivery;
+  
+  -- Las tablas las crea Hibernate automáticamente al iniciar el proyecto.
+  -- Este script solo agrega datos iniciales de prueba.
+  
+  -- Categorías de prueba
+  INSERT INTO categoria (nombre) VALUES
+  ('Electrónica'),
+  ('Alimentos'),
+  ('Ropa');
+  
+  -- Clientes de prueba
+  INSERT INTO cliente (nombres, apellidos, correo, telefono, direccion) VALUES
+  ('Diego', 'Ramirez Torres',  'diego@tecsup.edu.pe',  '987654321', 'Av. Industrial 123'),
+  ('Ana',   'Lopez Mendoza',   'ana@tecsup.edu.pe',    '912345678', 'Jr. Las Flores 456'),
+  ('Carlos','Quispe Ramos',    'carlos@tecsup.edu.pe', '998877665', 'Calle Lima 789');
+  
+  -- Productos de prueba (referenciando las categorías por ID)
+  INSERT INTO producto (nombre, descripcion, precio, stock, categoria_id) VALUES
+  ('Laptop Lenovo',   'Laptop i7 16GB',   2500.00, 15, 1),
+  ('Mouse Logitech',  'Mouse inalámbrico', 85.00,  50, 1),
+  ('Pan de molde',    'Pan integral 500g',  5.50, 200, 2),
+  ('Polo Tecsup',     'Polo algodón M',   45.00,  30, 3);
